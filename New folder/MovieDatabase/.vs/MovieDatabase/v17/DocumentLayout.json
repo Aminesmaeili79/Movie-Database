@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\models\\theater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\models\\theater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\models\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\models\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\controllers\\moviedatabasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\controllers\\moviedatabasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\dtos\\theatercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\dtos\\theatercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\dtos\\workercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\dtos\\workercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\dtos\\moviecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\dtos\\moviecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|d:\\github\\ozbul-backend\\moviedatabase\\moviedatabase\\moviedatabase\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F6FEEA-C71E-4F9F-AD4A-978175D4CF2D}|MovieDatabase\\MovieDatabase.csproj|solutionrelative:moviedatabase\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\Models\\Movie.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Models\\Movie.cs",
+              "RelativeToolTip": "MovieDatabase\\Models\\Movie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T18:34:18.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MovieDatabaseController.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Controllers\\MovieDatabaseController.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\Controllers\\MovieDatabaseController.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Controllers\\MovieDatabaseController.cs",
+              "RelativeToolTip": "MovieDatabase\\Controllers\\MovieDatabaseController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T18:08:34.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TheaterCreateDTO.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\DTOs\\TheaterCreateDTO.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\DTOs\\TheaterCreateDTO.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\DTOs\\TheaterCreateDTO.cs",
+              "RelativeToolTip": "MovieDatabase\\DTOs\\TheaterCreateDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T17:02:47.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WorkerCreateDTO.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\DTOs\\WorkerCreateDTO.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\DTOs\\WorkerCreateDTO.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\DTOs\\WorkerCreateDTO.cs",
+              "RelativeToolTip": "MovieDatabase\\DTOs\\WorkerCreateDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T16:55:38.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MovieCreateDTO.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\DTOs\\MovieCreateDTO.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\DTOs\\MovieCreateDTO.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\DTOs\\MovieCreateDTO.cs",
+              "RelativeToolTip": "MovieDatabase\\DTOs\\MovieCreateDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T16:55:18.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Worker.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Models\\Worker.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\Models\\Worker.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Models\\Worker.cs",
+              "RelativeToolTip": "MovieDatabase\\Models\\Worker.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T16:28:16.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Theater.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Models\\Theater.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\Models\\Theater.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Models\\Theater.cs",
+              "RelativeToolTip": "MovieDatabase\\Models\\Theater.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T16:28:08.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\Data\\DataContext.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Data\\DataContext.cs",
+              "RelativeToolTip": "MovieDatabase\\Data\\DataContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T16:25:58.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Program.cs",
+              "RelativeDocumentMoniker": "MovieDatabase\\Program.cs",
+              "ToolTip": "D:\\GitHub\\Ozbul-Backend\\MovieDatabase\\MovieDatabase\\MovieDatabase\\Program.cs",
+              "RelativeToolTip": "MovieDatabase\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T16:20:48.799Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
