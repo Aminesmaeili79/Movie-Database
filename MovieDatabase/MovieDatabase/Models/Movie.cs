@@ -9,7 +9,7 @@ namespace MovieDatabase.Models
         public DateTime ReleaseDate { get; set; }
         public List<Worker> Actors { get; set; }
         public int DirectorId { get; set; }
-        public virtual Worker Director { get; set; }
+        public Worker Director { get; set; }
         public List<Theater> Theaters { get; set; }
     }
 }
