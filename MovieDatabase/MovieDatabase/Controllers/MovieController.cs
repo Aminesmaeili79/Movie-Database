@@ -13,6 +13,7 @@ namespace MovieDatabase.Controllers
         {
             _MovieRepository = MovieRepository;
         }
+
         [HttpGet]
         [ProducesResponseType(200, Type=typeof(IEnumerable<Movie>))]
         public IActionResult GetMovies()

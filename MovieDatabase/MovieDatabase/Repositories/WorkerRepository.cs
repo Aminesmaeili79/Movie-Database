@@ -21,10 +21,23 @@ namespace MovieDatabase.Repositories
                 .Include(w => w.Movies)
                 .Include(w => w.ActorMovies)
                     .ThenInclude(am => am.Movie)
+                //.Include(w => w.ActorMovies)
+                //    .ThenInclude(am => am.Actor)
+                .OrderBy(w => w.Id)
+                .ToList();
+        }
+
+        public Worker GetWorkerById(int id)
+        {
+            return _context.Workers
+                .Include(w => w.Role)
+                .Include(w => w.Movies)
+                .Include(w => w.ActorMovies)
+                    .ThenInclude(am => am.Movie)
                 .Include(w => w.ActorMovies)
                     .ThenInclude(am => am.Actor)
                 .OrderBy(w => w.Id)
-                .ToList();
+                .FirstOrDefault(w => w.Id == id);
         }
     }
 }

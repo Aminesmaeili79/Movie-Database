@@ -18,11 +18,22 @@ namespace MovieDatabase.Repositories
         {
             return _context.Theaters
                 .Include(t => t.TheaterMovies)
-                    .ThenInclude(tm => tm.Theater)
-                .Include(t => t.TheaterMovies)
                     .ThenInclude(tm => tm.Movie)
+                .Include(t => t.TheaterMovies)
+                    .ThenInclude(tm => tm.Theater)
                 .OrderBy(t => t.Id)
                 .ToList();
+        }
+
+        public Theater GetTheaterById(int id)
+        {
+            return _context.Theaters
+                .Include(t => t.TheaterMovies)
+                    .ThenInclude(tm => tm.Movie)
+                .Include(t => t.TheaterMovies)
+                    .ThenInclude(tm => tm.Theater)
+                .OrderBy(t => t.Id)
+                .FirstOrDefault(t => t.Id == id);
         }
     }
 }

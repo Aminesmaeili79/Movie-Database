@@ -26,5 +26,17 @@ namespace MovieDatabase.Repositories
                 .OrderBy(m => m.Id)
                 .ToList();
         }
+
+        public Movie GetMovieById(int id)
+        {
+            return _context.Movies
+                .Include(m => m.Director)
+                .Include(m => m.ActorMovies)
+                    .ThenInclude(am => am.Actor)
+                .Include(m => m.TheaterMovies)
+                    .ThenInclude(tm => tm.Theater)
+                .FirstOrDefault(m => m.Id == id);
+        }
+
     }
 }
