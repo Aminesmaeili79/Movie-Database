@@ -5,6 +5,7 @@ namespace MovieDatabase.Interfaces
     public interface ITheaterRepository
     {
         List<Theater> GetTheaters();
-        Theater GetTheater(int id);
+        Theater GetTheaterById(int id);
+        Theater GetTheaterByName(string name);
     }
 }
