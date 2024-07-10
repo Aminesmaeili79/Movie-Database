@@ -28,11 +28,12 @@ namespace MovieDatabase.Repositories
         public Theater GetTheaterById(int id)
         {
             return _context.Theaters
+                .Where(t => t.Id == id)
                 .Include(t => t.TheaterMovies)
                     .ThenInclude(tm => tm.Movie)
                 .Include(t => t.TheaterMovies)
                     .ThenInclude(tm => tm.Theater)
-                .FirstOrDefault(t => t.Id == id);
+                .FirstOrDefault();
         }
     }
 }

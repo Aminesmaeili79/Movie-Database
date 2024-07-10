@@ -30,13 +30,13 @@ namespace MovieDatabase.Repositories
         public Movie GetMovieById(int id)
         {
             return _context.Movies
+                .Where(m => m.Id == id)
                 .Include(m => m.Director)
                 .Include(m => m.ActorMovies)
                     .ThenInclude(am => am.Actor)
                 .Include(m => m.TheaterMovies)
                     .ThenInclude(tm => tm.Theater)
-                .OrderBy(m => m.Id)
-                .FirstOrDefault(m => m.Id == id);
+                .FirstOrDefault();
         }
 
     }
