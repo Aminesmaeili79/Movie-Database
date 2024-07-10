@@ -32,7 +32,6 @@ namespace MovieDatabase.Repositories
                     .ThenInclude(tm => tm.Movie)
                 .Include(t => t.TheaterMovies)
                     .ThenInclude(tm => tm.Theater)
-                .OrderBy(t => t.Id)
                 .FirstOrDefault(t => t.Id == id);
         }
     }
