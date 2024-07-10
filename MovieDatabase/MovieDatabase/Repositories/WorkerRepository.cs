@@ -5,17 +5,15 @@ using MovieDatabase.Models;
 
 namespace MovieDatabase.Repositories
 {
-    // WorkerRepository class implements ITheaterRepository
     public class WorkerRepository : IWorkerRepository
     {
-        // MovieDbContext is injected into the repository
         private readonly MovieDbContext _context;
-        // Constructor to initialize MovieDbContext
+
         public WorkerRepository(MovieDbContext context)
         {
             _context = context;
         }
-        // GetWorkers method retrieves a collection of workers from the database
+
         public List<Worker> GetWorkers()
         {
             return _context.Workers
