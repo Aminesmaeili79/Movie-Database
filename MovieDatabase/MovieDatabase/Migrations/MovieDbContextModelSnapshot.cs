@@ -146,7 +146,7 @@ namespace MovieDatabase.Migrations
                     b.HasOne("MovieDatabase.Models.Worker", "Director")
                         .WithMany("Movies")
                         .HasForeignKey("DirectorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Director");

@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using MovieDatabase.Data;
 using MovieDatabase.Interfaces;
 using MovieDatabase.Models;
@@ -15,9 +16,15 @@ namespace MovieDatabase.Repositories
             _context = context;
         }
         // GetTheaters method retrieves a collection of theaters from the database
-        public ICollection<Theater> GetTheaters()
+        public List<Theater> GetTheaters()
         {
-            return _context.Theaters.OrderBy(t => t.Id).ToList();
+            return _context.Theaters
+                .Include(t => t.TheaterMovies)
+                    .ThenInclude(tm => tm.Theater)
+                .Include(t => t.TheaterMovies)
+                    .ThenInclude(tm => tm.Movie)
+                .OrderBy(t => t.Id)
+                .ToList();
         }
     }
 }

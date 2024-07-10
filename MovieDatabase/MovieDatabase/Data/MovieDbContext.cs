@@ -48,6 +48,13 @@ namespace MovieDatabase.Data
                 .WithMany(m => m.TheaterMovies)
                 .HasForeignKey(tm => tm.MovieId)
                 .OnDelete(DeleteBehavior.NoAction);
+
+            // One-to-Many relationship between Movie and Director
+            modelBuilder.Entity<Movie>()
+            .HasOne(m => m.Director)
+            .WithMany(w => w.Movies)
+            .HasForeignKey(m => m.DirectorId)
+            .OnDelete(DeleteBehavior.NoAction);
         }
 
     }

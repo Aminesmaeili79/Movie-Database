@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using MovieDatabase.Data;
 using MovieDatabase.Interfaces;
 using MovieDatabase.Models;
@@ -15,9 +16,17 @@ namespace MovieDatabase.Repositories
             _context = context;
         }
         // GetWorkers method retrieves a collection of workers from the database
-        public ICollection<Worker> GetWorkers()
+        public List<Worker> GetWorkers()
         {
-            return _context.Workers.OrderBy(t => t.Id).ToList();
+            return _context.Workers
+                .Include(w => w.Role)
+                .Include(w => w.Movies)
+                .Include(w => w.ActorMovies)
+                    .ThenInclude(am => am.Movie)
+                .Include(w => w.ActorMovies)
+                    .ThenInclude(am => am.Actor)
+                .OrderBy(w => w.Id)
+                .ToList();
         }
     }
 }
