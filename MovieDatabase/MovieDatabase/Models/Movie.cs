@@ -8,7 +8,7 @@
         public DateTime ReleaseDate { get; set; }
         // Foreign key for the Director navigation property
         public int DirectorId { get; set; }
-        public virtual Worker Director { get; set; }
+        public Worker Director { get; set; }
         // Navigation property for the many-to-many relationship between Worker and Movie
         public ICollection<ActorMovie> ActorMovies { get; set; }
         // Navigation property for the many-to-many relationship between Theater and Movie
