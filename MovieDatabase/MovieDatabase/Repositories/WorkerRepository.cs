@@ -39,5 +39,18 @@ namespace MovieDatabase.Repositories
                     .ThenInclude(am => am.Actor)
                 .FirstOrDefault();
         }
+
+        public Worker GetWorkerByName(string name)
+        {
+            return _context.Workers
+                .Where(w => w.FirstName.ToLower() + " " + w.LastName.ToLower() == name.ToLower())
+                .Include(w => w.Role)
+                .Include(w => w.Movies)
+                .Include(w => w.ActorMovies)
+                    .ThenInclude(am => am.Movie)
+                .Include(w => w.ActorMovies)
+                    .ThenInclude(am => am.Actor)
+                .FirstOrDefault();
+        }
     }
 }

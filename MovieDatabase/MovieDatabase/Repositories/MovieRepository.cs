@@ -38,5 +38,20 @@ namespace MovieDatabase.Repositories
                     .ThenInclude(tm => tm.Theater)
                 .FirstOrDefault();
         }
+<<<<<<< HEAD
+=======
+
+        public Movie GetMovieByTitle(string title)
+        {
+            return _context.Movies
+                .Where(m => m.Title.ToLower() == title.ToLower())
+                .Include(m => m.Director)
+                .Include(m => m.ActorMovies)
+                    .ThenInclude(am => am.Actor)
+                .Include(m => m.TheaterMovies)
+                    .ThenInclude(tm => tm.Theater)
+                .FirstOrDefault();
+        }
+>>>>>>> b136ec7b8027bc71cb581b33c35592e6ba2df628
     }
 }
