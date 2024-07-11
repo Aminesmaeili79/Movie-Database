@@ -38,6 +38,5 @@ namespace MovieDatabase.Repositories
                     .ThenInclude(tm => tm.Theater)
                 .FirstOrDefault();
         }
-
     }
 }

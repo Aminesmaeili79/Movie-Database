@@ -15,7 +15,7 @@ namespace MovieDatabase.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(200, Type=typeof(IEnumerable<Movie>))]
+        [ProducesResponseType(200, Type = typeof(IEnumerable<Movie>))]
         public IActionResult GetMovies()
         {
             var movies = _MovieRepository.GetMovies();
