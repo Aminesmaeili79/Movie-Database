@@ -10,6 +10,10 @@ namespace MovieDatabase.Helper
         {
             CreateMap<Movie, MovieDto>();
             CreateMap<MovieDto, Movie>();
+            CreateMap<Theater, TheaterDto>();
+            CreateMap<TheaterDto, Theater>();
+            CreateMap<Worker, WorkerDto>();
+            CreateMap<WorkerDto, Worker>();
         }
     }
 }

@@ -7,5 +7,7 @@ namespace MovieDatabase.Interfaces
         List<Worker> GetWorkers();
         Worker GetWorkerById(int id);
         Worker GetWorkerByName(string name);
+        bool CreateWorker(Worker worker);
+        bool Save();
     }
 }

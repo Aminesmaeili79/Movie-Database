@@ -52,5 +52,16 @@ namespace MovieDatabase.Repositories
                     .ThenInclude(am => am.Actor)
                 .FirstOrDefault();
         }
+
+        public bool CreateWorker(Worker worker)
+        {
+            _context.Add(worker);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            return _context.SaveChanges() >= 0;
+        }
     }
 }

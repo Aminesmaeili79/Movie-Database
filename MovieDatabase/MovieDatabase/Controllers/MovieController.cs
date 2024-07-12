@@ -20,7 +20,6 @@ namespace MovieDatabase.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(200, Type = typeof(IEnumerable<Movie>))]
         public IActionResult GetMovies()
         {
             var movies = _mapper.Map<List<MovieDto>>(_MovieRepository.GetMovies());
@@ -32,8 +31,6 @@ namespace MovieDatabase.Controllers
         }
 
         [HttpGet("{movieId}")]
-        [ProducesResponseType(200, Type = typeof(Movie))]
-        [ProducesResponseType(400)]
         public IActionResult GetMovieById(int movieId)
         {
             var movie = _mapper.Map<List<MovieDto>>(_MovieRepository.GetMovieById(movieId));
@@ -48,18 +45,15 @@ namespace MovieDatabase.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(400)]
         public IActionResult CreateMovie([FromBody] MovieDto movieCreate)
         {
             if (movieCreate == null)
                 return BadRequest(ModelState);
 
-            var movie = _MovieRepository.GetMovies()
-                .Where(m => m.Title.Trim().ToUpper() == movieCreate.Title.TrimEnd().ToUpper())
-                .FirstOrDefault();
+            var movieExists = _MovieRepository.GetMovies()
+                .Any(m => m.Title.Trim().ToUpper() == movieCreate.Title.TrimEnd().ToUpper());
 
-            if (movie != null)
+            if (movieExists)
             {
                 ModelState.AddModelError("", "Movie already exists");
                 return StatusCode(422, ModelState);

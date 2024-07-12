@@ -46,5 +46,16 @@ namespace MovieDatabase.Repositories
                     .ThenInclude(tm => tm.Theater)
                 .FirstOrDefault();
         }
+
+        public bool CreateTheater(Theater theater)
+        {
+            _context.Add(theater);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            return _context.SaveChanges() >= 0;
+        }
     }
 }
