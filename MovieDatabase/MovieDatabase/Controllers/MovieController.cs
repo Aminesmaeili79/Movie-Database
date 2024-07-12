@@ -4,6 +4,7 @@ using MovieDatabase.Interfaces;
 using MovieDatabase.Models;
 using MovieDatabase.Dto;
 using System.Collections.Generic;
+using MovieDatabase.Repositories;
 
 namespace MovieDatabase.Controllers
 {
@@ -13,10 +14,12 @@ namespace MovieDatabase.Controllers
     {
         private readonly IMovieRepository _MovieRepository;
         private readonly IMapper _mapper;
-        public MovieController(IMovieRepository MovieRepository, IMapper mapper)
+        private readonly IWorkerRepository _WorkerRepository;
+        public MovieController(IMovieRepository MovieRepository, IMapper mapper, IWorkerRepository workerRepository)
         {
             _MovieRepository = MovieRepository;
             _mapper = mapper;
+            _WorkerRepository = workerRepository;
         }
 
         [HttpGet]
@@ -57,6 +60,14 @@ namespace MovieDatabase.Controllers
             {
                 ModelState.AddModelError("", "Movie already exists");
                 return StatusCode(422, ModelState);
+            }
+
+            var director = _WorkerRepository.GetWorkerById(movieCreate.DirectorId);
+
+            if (director == null || director.Role != Role.Director)
+            {
+                ModelState.AddModelError("DirectorId", "The entered director ID is not a director or isn't valid.");
+                return BadRequest(ModelState);
             }
 
             if (!ModelState.IsValid)
