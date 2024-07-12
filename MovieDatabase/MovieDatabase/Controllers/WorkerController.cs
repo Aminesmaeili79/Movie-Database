@@ -57,7 +57,7 @@ namespace MovieDatabase.Controllers
 
             if (!_WorkerRepository.CreateWorker(workerMap))
             {
-                ModelState.AddModelError("", $"Something went wrong saving the movie {workerCreate.FirstName} {workerCreate.LastName}");
+                ModelState.AddModelError("", $"Something went wrong saving the worker {workerCreate.FirstName} {workerCreate.LastName}");
                 return StatusCode(500, ModelState);
             }
 
