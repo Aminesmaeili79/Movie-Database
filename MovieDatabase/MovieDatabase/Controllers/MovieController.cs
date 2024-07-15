@@ -83,5 +83,38 @@ namespace MovieDatabase.Controllers
 
             return Ok("Successfully created");
         }
+
+        [HttpPut("{movieId}")]
+        public IActionResult UpdateMovie(int movieId, [FromBody] MovieDto movieUpdate)
+        {
+            if (movieUpdate == null)
+                return BadRequest(ModelState);
+
+            var movie = _MovieRepository.GetMovieById(movieId);
+
+            if (movie == null)
+                return NotFound();
+
+            var director = _WorkerRepository.GetWorkerById(movieUpdate.DirectorId);
+
+            if (director == null || director.Role != Role.Director)
+            {
+                ModelState.AddModelError("DirectorId", "The entered director ID is not a director or isn't valid.");
+                return BadRequest(ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var movieMap = _mapper.Map<Movie>(movieUpdate);
+
+            if (!_MovieRepository.UpdateMovie(movieMap))
+            {
+                ModelState.AddModelError("", $"Something went wrong updating the movie {movieUpdate.Title}");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully updated");
+        }
     }
 }

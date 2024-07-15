@@ -63,5 +63,44 @@ namespace MovieDatabase.Controllers
 
             return Ok("Successfully created");
         }
+
+        [HttpPut("{workerId}")]
+        public IActionResult UpdateWorker(int workerId, [FromBody] WorkerDto workerUpdate)
+        {
+            if (workerUpdate == null)
+                return BadRequest(ModelState);
+
+            var worker = _WorkerRepository.GetWorkerById(workerId);
+
+            if (worker == null)
+                return NotFound();
+
+            var workerFirstNameExists = _WorkerRepository.GetWorkers()
+                .Any(m => m.FirstName.Trim().ToUpper() == workerUpdate.FirstName.TrimEnd().ToUpper());
+            var workerLastNameExists = _WorkerRepository.GetWorkers()
+                .Any(m => m.LastName.Trim().ToUpper() == workerUpdate.LastName.TrimEnd().ToUpper());
+            var workerFullNameExists = _WorkerRepository.GetWorkers()
+                .Any(m => m.FirstName.Trim().ToUpper() + " " + m.LastName.Trim().ToUpper()
+                == workerUpdate.FirstName.TrimEnd().ToUpper() + " " + workerUpdate.LastName.TrimEnd().ToUpper());
+
+            if (workerFirstNameExists || workerLastNameExists || workerFullNameExists)
+            {
+                ModelState.AddModelError("", "Worker already exists");
+                return StatusCode(422, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var workerMap = _mapper.Map<Worker>(workerUpdate);
+
+            if (!_WorkerRepository.UpdateWorker(workerMap))
+            {
+                ModelState.AddModelError("", $"Something went wrong updating the worker {workerUpdate.FirstName} {workerUpdate.LastName}");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully updated");
+        }
     }
 }

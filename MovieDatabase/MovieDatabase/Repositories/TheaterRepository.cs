@@ -57,5 +57,11 @@ namespace MovieDatabase.Repositories
         {
             return _context.SaveChanges() >= 0;
         }
+
+        public bool UpdateTheater(Theater theater)
+        {
+            _context.Update(theater);
+            return Save();
+        }
     }
 }

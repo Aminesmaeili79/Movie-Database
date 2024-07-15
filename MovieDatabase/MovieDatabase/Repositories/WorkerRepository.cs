@@ -63,5 +63,11 @@ namespace MovieDatabase.Repositories
         {
             return _context.SaveChanges() >= 0;
         }
+
+        public bool UpdateWorker(Worker worker)
+        {
+            _context.Update(worker);
+            return Save();
+        }
     }
 }

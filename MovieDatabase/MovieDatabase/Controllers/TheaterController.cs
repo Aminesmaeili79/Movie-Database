@@ -59,5 +59,30 @@ namespace MovieDatabase.Controllers
 
             return Ok("Successfully created");
         }
+
+        [HttpPut("{theaterId}")]
+        public IActionResult UpdateTheater(int theaterId, [FromBody] TheaterDto theaterUpdate)
+        {
+            if (theaterUpdate == null)
+                return BadRequest(ModelState);
+
+            var theater = _TheaterRepository.GetTheaterById(theaterId);
+
+            if (theater == null)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var theaterMap = _mapper.Map<Theater>(theaterUpdate);
+
+            if (!_TheaterRepository.UpdateTheater(theaterMap))
+            {
+                ModelState.AddModelError("", $"Something went wrong updating the theater {theaterUpdate.Name}");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully updated");
+        }
     }
 }
