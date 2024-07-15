@@ -38,8 +38,6 @@ namespace MovieDatabase.Repositories
                     .ThenInclude(tm => tm.Theater)
                 .FirstOrDefault();
         }
-<<<<<<< HEAD
-=======
 
         public Movie GetMovieByTitle(string title)
         {
@@ -52,6 +50,17 @@ namespace MovieDatabase.Repositories
                     .ThenInclude(tm => tm.Theater)
                 .FirstOrDefault();
         }
->>>>>>> b136ec7b8027bc71cb581b33c35592e6ba2df628
+
+        public bool CreateMovie(Movie movie)
+        {
+            _context.Add(movie);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved >= 0 ? true : false;
+        }
     }
 }

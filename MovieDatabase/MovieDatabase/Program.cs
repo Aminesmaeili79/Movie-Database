@@ -9,7 +9,7 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<ITheaterRepository, TheaterRepository>();
 builder.Services.AddScoped<IWorkerRepository, WorkerRepository>();
 builder.Services.AddControllers();
-
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MovieDbContext>(

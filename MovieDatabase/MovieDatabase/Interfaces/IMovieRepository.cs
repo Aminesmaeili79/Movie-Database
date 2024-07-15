@@ -7,5 +7,7 @@ namespace MovieDatabase.Interfaces
         List<Movie> GetMovies();
         Movie GetMovieById(int id);
         Movie GetMovieByTitle(string title);
+        bool CreateMovie(Movie movie);
+        bool Save();
     }
 }
