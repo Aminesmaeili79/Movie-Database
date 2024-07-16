@@ -62,5 +62,24 @@ namespace MovieDatabase.Repositories
             var saved = _context.SaveChanges();
             return saved >= 0 ? true : false;
         }
+
+        public bool UpdateMovie(Movie movie)
+        {
+            var existingEntity = _context.Movies.Find(movie.Id);
+            if (existingEntity != null)
+            {
+                _context.Entry(existingEntity).State = EntityState.Detached;
+            }
+
+            _context.Entry(movie).State = EntityState.Modified;
+            _context.Update(movie);
+            return Save();
+        }
+
+        public bool DeleteMovie(Movie movie)
+        {
+            _context.Remove(movie);
+            return Save();
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace MovieDatabase.Controllers
         [HttpGet("{movieId}")]
         public IActionResult GetMovieById(int movieId)
         {
-            var movie = _mapper.Map<List<MovieDto>>(_MovieRepository.GetMovieById(movieId));
+            var movie = _mapper.Map<MovieDto>(_MovieRepository.GetMovieById(movieId));
 
             if (movie == null)
                 return NotFound();
@@ -82,6 +82,59 @@ namespace MovieDatabase.Controllers
             }
 
             return Ok("Successfully created");
+        }
+
+        [HttpPut("{movieId}")]
+        public IActionResult UpdateMovie(int movieId, [FromBody] MovieDto movieUpdate)
+        {
+            if (movieUpdate == null)
+                return BadRequest(ModelState);
+
+            var movie = _MovieRepository.GetMovieById(movieId);
+
+            if (movie == null)
+                return NotFound();
+
+            var director = _WorkerRepository.GetWorkerById(movieUpdate.DirectorId);
+
+            if (director == null || director.Role != Role.Director)
+            {
+                ModelState.AddModelError("DirectorId", "The entered director ID is not a director or isn't valid.");
+                return BadRequest(ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var movieMap = _mapper.Map<Movie>(movieUpdate);
+
+            if (!_MovieRepository.UpdateMovie(movieMap))
+            {
+                ModelState.AddModelError("", $"Something went wrong updating the movie {movieUpdate.Title}");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully updated");
+        }
+
+        [HttpDelete("{movieId}")]
+        public IActionResult DeleteMovie(int movieId)
+        {
+            var movie = _MovieRepository.GetMovieById(movieId);
+
+            if (movie == null)
+                return NotFound();
+
+            if (!_MovieRepository.DeleteMovie(movie))
+            {
+                ModelState.AddModelError("", $"Something went wrong deleting the movie {movie.Title}");
+                return StatusCode(500, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            return Ok("Successfully deleted");
         }
     }
 }

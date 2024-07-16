@@ -8,6 +8,8 @@ namespace MovieDatabase.Interfaces
         Movie GetMovieById(int id);
         Movie GetMovieByTitle(string title);
         bool CreateMovie(Movie movie);
+        bool UpdateMovie(Movie movie);
+        bool DeleteMovie(Movie movie);
         bool Save();
     }
 }

@@ -49,7 +49,27 @@ namespace MovieDatabase.Data
                 .HasOne(m => m.Director)
                 .WithMany(w => w.Movies)
                 .HasForeignKey(m => m.DirectorId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Movie>()
+                .HasMany(m => m.ActorMovies) // Assuming Movie has a collection of ActorMovie
+                .WithOne(am => am.Movie) // Assuming ActorMovie has a navigation property to Movie
+                .HasForeignKey(am => am.MovieId) // Assuming ActorMovie has a foreign key to Movie
+                .OnDelete(DeleteBehavior.Cascade); // Configuring cascade delete
+
+            modelBuilder.Entity<Movie>()
+                .HasMany(m => m.TheaterMovies) // Assuming Movie has a collection of TheaterMovie
+                .WithOne(tm => tm.Movie) // Assuming TheaterMovie has a navigation property to Movie
+                .HasForeignKey(tm => tm.MovieId) // Assuming TheaterMovie has a foreign key to Movie
+                .OnDelete(DeleteBehavior.Cascade); // Configuring cascade delete
+
+            modelBuilder.Entity<Theater>()
+                .HasMany(t => t.TheaterMovies)
+                .WithOne(tm => tm.Theater)
+                .HasForeignKey(tm => tm.TheaterId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
+
+
     }
 }
