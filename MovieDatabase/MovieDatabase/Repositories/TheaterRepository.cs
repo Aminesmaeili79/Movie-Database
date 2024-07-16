@@ -24,7 +24,8 @@ namespace MovieDatabase.Repositories
         public Theater GetTheaterById(int id)
         {
             return _context.Theaters
-                .FirstOrDefault(t => t.Id == id);
+                .Where(t => t.Id == id)
+                .FirstOrDefault();
         }
 
         public bool CreateTheater(Theater theater)

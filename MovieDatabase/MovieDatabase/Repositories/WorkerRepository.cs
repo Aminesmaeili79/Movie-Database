@@ -24,7 +24,8 @@ namespace MovieDatabase.Repositories
         public Worker GetWorkerById(int id)
         {
             return _context.Workers
-                .FirstOrDefault(w => w.Id == id);
+                .Where(w => w.Id == id)
+                .FirstOrDefault();
         }
 
         public bool CreateWorker(Worker worker)
