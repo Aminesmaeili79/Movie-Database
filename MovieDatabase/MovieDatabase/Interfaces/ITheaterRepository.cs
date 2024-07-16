@@ -6,9 +6,9 @@ namespace MovieDatabase.Interfaces
     {
         List<Theater> GetTheaters();
         Theater GetTheaterById(int id);
-        Theater GetTheaterByName(string name);
         bool CreateTheater(Theater theater);
         bool UpdateTheater(Theater theater);
+        bool DeleteTheater(Theater theater);
         bool Save();
     }
 }

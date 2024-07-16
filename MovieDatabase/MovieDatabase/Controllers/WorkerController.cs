@@ -102,5 +102,25 @@ namespace MovieDatabase.Controllers
 
             return Ok("Successfully updated");
         }
+
+        [HttpDelete("{workerId}")]
+        public IActionResult DeleteWorker(int workerId)
+        {
+            var worker = _WorkerRepository.GetWorkerById(workerId);
+
+            if (worker == null)
+                return NotFound();
+
+            if (!_WorkerRepository.DeleteWorker(worker))
+            {
+                ModelState.AddModelError("", $"Something went wrong deleting the worker {worker.FirstName} {worker.LastName}");
+                return StatusCode(500, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            return Ok("Successfully deleted");
+        }
     }
 }

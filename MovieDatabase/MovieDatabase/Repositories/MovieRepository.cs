@@ -30,13 +30,12 @@ namespace MovieDatabase.Repositories
         public Movie GetMovieById(int id)
         {
             return _context.Movies
-                .Where(m => m.Id == id)
                 .Include(m => m.Director)
                 .Include(m => m.ActorMovies)
                     .ThenInclude(am => am.Actor)
                 .Include(m => m.TheaterMovies)
                     .ThenInclude(tm => tm.Theater)
-                .FirstOrDefault();
+                .FirstOrDefault(m => m.Id == id);
         }
 
         public Movie GetMovieByTitle(string title)
@@ -65,7 +64,20 @@ namespace MovieDatabase.Repositories
 
         public bool UpdateMovie(Movie movie)
         {
+            var existingEntity = _context.Movies.Find(movie.Id);
+            if (existingEntity != null)
+            {
+                _context.Entry(existingEntity).State = EntityState.Detached;
+            }
+
+            _context.Entry(movie).State = EntityState.Modified;
             _context.Update(movie);
+            return Save();
+        }
+
+        public bool DeleteMovie(Movie movie)
+        {
+            _context.Remove(movie);
             return Save();
         }
     }

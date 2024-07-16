@@ -39,8 +39,10 @@ namespace MovieDatabase.Controllers
 
             var theaterExists = _TheaterRepository.GetTheaters()
                 .Any(t => t.Name.Trim().ToUpper() == theaterCreate.Name.TrimEnd().ToUpper());
+            var locationExists = _TheaterRepository.GetTheaters()
+                .Any(t => t.Location.Trim().ToUpper() == theaterCreate.Location.TrimEnd().ToUpper());
 
-            if (theaterExists)
+            if (theaterExists && locationExists)
             {
                 ModelState.AddModelError("", "Theater already exists");
                 return StatusCode(422, ModelState);
@@ -83,6 +85,26 @@ namespace MovieDatabase.Controllers
             }
 
             return Ok("Successfully updated");
+        }
+
+        [HttpDelete("{theaterId}")]
+        public IActionResult DeleteTheater(int theaterId)
+        {
+            var theater = _TheaterRepository.GetTheaterById(theaterId);
+
+            if (theater == null)
+                return NotFound();
+
+            if (!_TheaterRepository.DeleteTheater(theater))
+            {
+                ModelState.AddModelError("", $"Something went wrong deleting the theater {theater.Name}");
+                return StatusCode(500, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            return Ok("Successfully deleted");
         }
     }
 }
