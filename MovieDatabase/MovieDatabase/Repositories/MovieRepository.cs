@@ -41,13 +41,12 @@ namespace MovieDatabase.Repositories
         public Movie GetMovieByTitle(string title)
         {
             return _context.Movies
-                .Where(m => m.Title.ToLower() == title.ToLower())
                 .Include(m => m.Director)
                 .Include(m => m.ActorMovies)
                     .ThenInclude(am => am.Actor)
                 .Include(m => m.TheaterMovies)
                     .ThenInclude(tm => tm.Theater)
-                .FirstOrDefault();
+                .FirstOrDefault(m => m.Title.ToLower() == title.ToLower());
         }
 
         public bool CreateMovie(Movie movie)

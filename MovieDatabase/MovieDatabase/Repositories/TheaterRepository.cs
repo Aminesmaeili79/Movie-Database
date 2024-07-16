@@ -17,10 +17,6 @@ namespace MovieDatabase.Repositories
         public List<Theater> GetTheaters()
         {
             return _context.Theaters
-                //.Include(t => t.TheaterMovies)
-                //    .ThenInclude(tm => tm.Movie)
-                //.Include(t => t.TheaterMovies)
-                //    .ThenInclude(tm => tm.Theater)
                 .OrderBy(t => t.Id)
                 .ToList();
         }
@@ -28,23 +24,8 @@ namespace MovieDatabase.Repositories
         public Theater GetTheaterById(int id)
         {
             return _context.Theaters
-                //.Include(t => t.TheaterMovies)
-                //    .ThenInclude(tm => tm.Movie)
-                //.Include(t => t.TheaterMovies)
-                //    .ThenInclude(tm => tm.Theater)
                 .FirstOrDefault(t => t.Id == id);
         }
-
-        //public Theater GetTheaterByName(string name)
-        //{
-        //    return _context.Theaters
-        //        .Where(t => t.Name.ToLower() == name.ToLower())
-        //        .Include(t => t.TheaterMovies)
-        //            .ThenInclude(tm => tm.Movie)
-        //        .Include(t => t.TheaterMovies)
-        //            .ThenInclude(tm => tm.Theater)
-        //        .FirstOrDefault();
-        //}
 
         public bool CreateTheater(Theater theater)
         {

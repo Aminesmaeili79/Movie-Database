@@ -26,9 +26,7 @@ namespace MovieDatabase.Helper
             CreateMap<Worker, WorkerDto>()
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FirstName))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))
-                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()))
-                .ForMember(dest => dest.Movies, opt => opt.MapFrom(src => src.Movies))
-                .ForMember(dest => dest.ActorMovies, opt => opt.MapFrom(src => src.ActorMovies));
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()));
             CreateMap<WorkerDto, Worker>()
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FirstName))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))

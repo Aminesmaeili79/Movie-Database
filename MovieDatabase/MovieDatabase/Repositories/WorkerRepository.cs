@@ -17,11 +17,6 @@ namespace MovieDatabase.Repositories
         public List<Worker> GetWorkers()
         {
             return _context.Workers
-                //.Include(w => w.Movies)
-                //.Include(w => w.ActorMovies)
-                //    .ThenInclude(am => am.Movie)
-                //.Include(w => w.ActorMovies)
-                //    .ThenInclude(am => am.Actor)
                 .OrderBy(w => w.Id)
                 .ToList();
         }
@@ -29,26 +24,8 @@ namespace MovieDatabase.Repositories
         public Worker GetWorkerById(int id)
         {
             return _context.Workers
-                //.Include(w => w.Movies)
-                //.Include(w => w.ActorMovies)
-                //    .ThenInclude(am => am.Movie)
-                //.Include(w => w.ActorMovies)
-                //    .ThenInclude(am => am.Actor)
                 .FirstOrDefault(w => w.Id == id);
         }
-
-        //public Worker GetWorkerByName(string name)
-        //{
-        //    return _context.Workers
-        //       .Where(w => w.FirstName.ToLower() + " " + w.LastName.ToLower() == name.ToLower())
-        //        .Include(w => w.Role)
-        //        .Include(w => w.Movies)
-        //        .Include(w => w.ActorMovies)
-        //            .ThenInclude(am => am.Movie)
-        //        .Include(w => w.ActorMovies)
-        //           .ThenInclude(am => am.Actor)
-        //       .FirstOrDefault();
-        //}
 
         public bool CreateWorker(Worker worker)
         {
