@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MovieDatabase.Data;
-using MovieDatabase.Dto;
 using MovieDatabase.Interfaces;
 using MovieDatabase.Models;
 
@@ -81,13 +80,6 @@ namespace MovieDatabase.Repositories
         {
             _context.Remove(movie);
             return Save();
-        }
-
-        public Movie GetMoviesTrimToUpper(MovieDto movieCreate)
-        {
-            return
-                GetMovies().Where(m => m.Title.Trim().ToUpper() == movieCreate.Title.TrimEnd().ToUpper())
-                    .FirstOrDefault();
         }
     }
 }
