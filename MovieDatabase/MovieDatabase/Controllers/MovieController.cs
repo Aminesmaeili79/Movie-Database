@@ -53,10 +53,9 @@ namespace MovieDatabase.Controllers
             if (movieCreate == null)
                 return BadRequest(ModelState);
 
-            var movieExists = _MovieRepository.GetMovies()
-                .Any(m => m.Title.Trim().ToUpper() == movieCreate.Title.TrimEnd().ToUpper());
+            var movieExists = _MovieRepository.GetMoviesTrimToUpper(movieCreate);
 
-            if (movieExists)
+            if (movieExists != null)
             {
                 ModelState.AddModelError("", "Movie already exists");
                 return StatusCode(422, ModelState);
